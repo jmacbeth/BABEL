@@ -1,0 +1,211 @@
+; This file contains the predicates used in BABEL's discrimination
+; nets.  This first line of the file is an integer giving the total
+; number of predicates on the file.  Each S-expression following that
+; is a predicate.
+;
+; JCM: First number in this file is the total number of predicates in the array
+; Modified the code so that the array indices will start at 1 instead of 0
+; The array element at index 0 is NIL
+; Would be nice to change this and make it dynamic ..
+; What about having symbols stand for the array indices
+200
+(EQU (MOBJECT) *NEGEMOTION*)    ; 1
+(EQU (MOBJECT) *POSEMOTION*)    ; 2
+(EQU (MANNER) REPEATEDLY)       ; 3
+(EQU (TO) *INSIDE*)             ; 4
+(EQU (FOCUS) (TO PART))         ; 5
+(EQU (MOBJECT) *ANGER*)         ; 6
+(EQU (<≡>) *OWN*)               ; 7
+(EQU (<≡>) *POSS*)              ; 8
+NIL                             ; 9
+(EQU (FOCUS) (ACTOR))           ; 10
+(EQU (OBJECT) *ALCOHOL*)        ; 11
+(EQU (INST <=>) *MOVE*)         ; 12
+(EQU (FROM) LOC)                ; 13
+(EQU (TO) *CP*)                 ; 14
+(EQU (<=>) *PTRANS*)            ; 15
+(EQU (<=>) *ATRANS*)            ; 16
+(EQU (<=>) *MTRANS*)            ; 17
+(EQU (FROM) *SURFACE*)          ; 18
+(EQU (FROM) *CP*)               ; 19
+(EQU (<=> MANNER) *RAPID*)      ; 20
+(EQU (INST) NIL)                ; 21
+NIL                             ; 22
+(EQU (INST <=> MANNER) *RAPID*) ; 23
+(EQU (INST OBJECT) *FEET*)      ; 24
+(EQU (VIA) *AIR*)               ; 25
+(EQU (TO ↔ <≡>) HEIGHT)         ; 26
+(EQU (FROM) HEIGHT)             ; 27
+(EQU (FROM) NIL)                ; 28
+(EQU (INST MANNER) REPEATEDLY)  ; 29
+NIL                             ; 30
+NIL                             ; 31
+(EQU (MODE) NIL)                ; 32
+NIL                             ; 33
+NIL                             ; 34
+NIL                             ; 35
+(EQU (FROM) *EAR*)              ; 36
+(EQU (MOBJECT <≡> VAL) *BE*)    ; 37
+(EQU (FROM) *NOSE*)             ; 38
+(EQU (FROM) *EYE*)              ; 39
+NIL                             ; 40
+(EQU (CON <≡ <≡>T VAL) *PHURT*) ; 41
+(EQU (CON <≡ <≡>T) *JOY*)       ; 42
+(EQU (<=>) *DO*)                ; 43
+NIL                             ; 44
+(EQU (CON <≡>) *GOOD*)          ; 45
+(EQU (FROM) *BODY*)             ; 46
+(EQU (FROM) *LTM*)              ; 47
+NIL                             ; 48
+(EQU (TO) *LTM*)                ; 49
+(EQU (OBJECT) *SMOKE*)          ; 50
+(EQU (<=>) *INGEST*)            ; 51
+(EQU (CON CON <=>) *DO*)        ; 52
+(EQU (MOBJECT) *CONCEPTS*)      ; 53
+(EQU (<=>) *CONC*)              ; 54
+(EQU (<≡ <≡>T) *HEALTH*)        ; 55
+(EQU (<≡ <≡>T) *PHURT*)         ; 56
+NIL                             ; 57
+NIL                             ; 58
+(EQU (<≡ <≡>T) *ANGER*)         ; 59
+(EQU (<≡ <≡>T) *JOY*)           ; 60
+NIL                             ; 61
+(EQU (OBJECT) *HAND*)           ; 62
+(EQU (<=>) *GRASP*)             ; 63
+(EQU (OBJECT) *NECK*)           ; 64
+(EQU (<≡>) *LOC*)               ; 65
+(EQU (FROM) *MOUTH*)            ; 66
+(EQU (<≡ <≡>T VAL) -10)         ; 67
+(EQU (CON) NIL)                 ; 68
+(EQU (<≡>) *XABT*)              ; 69
+NIL                             ; 70
+(EQU (OBJECT) *FOOT*)           ; 71
+(EQU (TS) NIL)                  ; 72
+(EQU (TF) NIL)                  ; 73
+(EQU (OBJECT) *AIR*)            ; 74
+(EQU (<≡>T) *HEALTH*)           ; 75
+(EQU (<≡>T VAL) -10)            ; 76
+(EQU (<=>) *PROPEL*)            ; 77
+(EQU (FOCUS) (CON OBJECT))      ; 78
+(EQU (FOCUS) (<≡≡> ACTOR))      ; 79
+(EQU (<≡>) *PHYSCONT*)          ; 80
+(PROP (TO) DUMMY)               ; 81
+(PROP (ACTOR) DUMMY)            ; 82
+(PROP (CON ACTOR) DUMMY)        ; 83
+(PROP (<≡>) SSTATE)             ; 84
+(PROP (<≡>) MSTATE)             ; 85
+(PROP (<≡>) PSTATE)             ; 86
+(PROP (FROM) MENT_OBJ)          ; 87
+(PROP (FROM) CONT)              ; 88
+(PROP (OBJECT) FLUID)           ; 89
+NIL                             ; 90
+(PROP (ACTOR) VEHICLE)          ; 91
+NIL                             ; 92
+NIL                             ; 93
+NIL                             ; 94
+NIL                             ; 95
+(PROP (ACTOR) HUMAN)            ; 96
+NIL                             ; 97    
+(PROP (OBJECT) MEDICATION)      ; 98
+(PROP (INST FROM) CIGGY)        ; 99
+(PROP (MOBJECT INVOLV) PHYS)    ; 100
+(PROP (<≡ <≡>T) PSTATE)         ; 101
+NIL                             ; 102
+(PROP (<≡ OBJECT) POISON)       ; 103
+(PROP (ACTOR) MENT_OBJ)         ; 104
+(PROP (OBJECT) GAS)             ; 105
+(PROP (CON OBJECT) MONEY)       ; 106
+(MMQ (MOBJECT MODE) *NEG*)      ; 107
+(MMQ (MODE) TS)                 ; 108
+(MMQ (MODE) TF)                 ; 109
+NIL                             ; 110
+(MMQ (MODE) *NEG*)              ; 111
+(MMQ (MODE) *CAN*)              ; 112
+(MMQ (MODE) *CANNOT*)           ; 113
+(MMQ (<≡ MODE) *NEG*)           ; 114
+(MMQ (<≡ MODE) *CANNOT*)        ; 115
+(MMQ (<≡ MODE) *CAN*)           ; 116
+(ID (ACTOR) (MOBJECT TO))       ; 117
+(ID (ACTOR) (TO PART))          ; 118
+(ID (MOBJECT ACTOR) (TO PART))  ; 119
+(ID (ACTOR) (FROM PART))        ; 120
+(ID (ACTOR) (MOBJECT ACTOR))    ; 121
+(ID (ACTOR) (INST ACTOR))       ; 122
+(ID (TO) (INST TO))             ; 123
+(ID (FROM) (INST FROM))         ; 124
+(ID (OBJECT) (INST ACTOR CONT)) ; 125
+(ID (OBJECT) (FROM ACTOR))      ; 126
+(ID (FROM VAL) (FROM))          ; 127
+(ID (ACTOR) (OBJECT))           ; 128
+(ID (ACTOR) (OBJECT *POSS*))    ; 129
+NIL                             ; 130
+(ID (ACTOR) (FROM))             ; 131
+(ID (ACTOR) (TO))               ; 132
+(ID (CON <≡ ACTOR) (<≡> VAL PART)) ; 133
+(ID (CON TO) (<≡> VAL PART))    ; 134
+(ID (FROM PART) (TO PART))      ; 135
+(ID (TO PART) (MOBJECT ACTOR))  ; 136
+(ID (ACTOR) (MOBJECT <≡ ACTOR)) ; 137
+(ID (ACTOR) (<≡ ACTOR))         ; 138
+(ID (OBJECT PART) (<≡ ACTOR))   ; 139
+(ID (MOBJECT ACTOR) (MOBJECT <≡ ACTOR)) ; 140 
+(ID (CON <≡) (∧ CON))           ; 141
+(ID (CON <≡ ACTOR) (∧ <≡ ACTOR))  ; 142
+(ID (CON ACTOR) (<≡≡> TO))        ; 143
+(ID (CON TO) (<≡≡> ACTOR))        ; 144
+(ID (OBJECT) (<≡ ACTOR))          ; 145
+(ID (TO) (<≡ <≡> VAL))            ; 146
+(POT_HEAD (MOBJECT CON) GET4)     ; 147
+(POT_HEAD (INST) GO1)             ; 148
+(POT_HEAD (INST) FLY4)            ; 149
+NIL                               ; 150
+(POT_HEAD (CON CON) GET4)         ; 151
+(POT_HEAD (CON CON) GO1)          ; 152
+(POT_HEAD (CON) GO1)              ; 153
+(POT_HEAD (CON) GET4)             ; 154
+(POT_HEAD (<≡) INGEST1)           ; 155
+(POT_HEAD (CON) GRAB1)            ; 156
+(POT_HEAD (<≡) BREATHE1)          ; 157
+(POT_HEAD (∧ <≡) DIE1)            ; 158
+(POT_HEAD (CON) CHOKE1)           ; 159
+(POT_HEAD (<≡≡>) GET4)            ; 160
+(POT_HEAD (<≡) TOUCH1)            ; 161
+NIL                               ; 162
+(SKEL ALL E)                      ; 163
+NIL                               ; 164
+NIL                               ; 165
+(SKEL ALL EKE)                    ; 166
+NIL                               ; 167
+(SKEL ALL C)                      ; 168
+NIL                               ; 169
+(DIF (ACTOR) (TO PART))           ; 170
+(GRREAT (<≡ INC) 3)               ; 171
+(GRREAT (<≡ INC) 0)               ; 172
+(GRREAT (CON <≡ INC) 0)           ; 173
+(GRREAT (MOBJECT <≡ INC) 0)       ; 174
+(LESSS (<≡ INC) -3)               ; 175
+NIL                               ; 176
+(LESSS (CON <≡> VAL) 0)           ; 177
+(TIM_REL NIL ((TIME) (MOBJECT TIME)) (BEFORE (↑ 1) (↑ 2)))                              ; 178
+(TIM_REL NIL ((CON TIME) (TIME)) (AFTER (↑ 1) (↑ 2)))                                   ; 179
+(TIM_REL NIL ((CON TIME) (TIME)) (BEFORE (↑ 1) (↑ 2)))                                  ; 180
+(MEM_QUERY2 NIL ((MOBJECT) (ACTOR)) (DOES ($ 1) IMPLY THAT ($ 2) IS BAD))               ; 181
+(MEM_QUERY2 NIL ((MOBJECT) (TO PART) (MOBJECT TIME)) (WOULD ($ 1) BENEFIT ($ 2)))       ; 182
+(MEM_QUERY2 NIL ((OBJECT) (TO) (TIME)) (DID ($ 2) POSSESS ($ 1) BEFORE ($ 3)))          ; 183
+(MEM_QUERY2 NIL ((MOBJECT) (TO PART) (MOBJECT TIME)) (WOULD ($ 1) HARM ($ 2)))          ; 184
+(MEM_QUERY2 NIL ((MOBJECT) (ACTOR) (TIME)) (DID ($ 2) KNOW THAT ($ 1) BEFORE ($ 3)))    ; 185
+(MEM_QUERY2 NIL ((TO) (FROM)) (BELOW (↑ 2) (↑ 1)))                                      ; 186
+(MEM_QUERY2 NIL ((TO) (FROM)) (BELOW (↑ 1) (↑ 2)))                                      ; 187
+(MNLKC ALL K)                                                                           ; 188
+(MNLKC (CON) K)                          ; 189
+(MNLKC (∧) K)                            ; 190
+NIL                                      ; 191
+(MNLKC (CON) S)                          ; 192
+(MNLKC (MOBJECT) K)                      ; 193
+(MNLK ALL <≡)                            ; 194
+(MNLK (CON) <≡C)                         ; 195
+(POSM (<=> MODE))                        ; 196
+(PROP (OBJECT) WEAPON)                   ; 197
+(EQU (TO) *OUTSIDE*)                     ; 198
+(EQU (FROM) *INSIDE*)                    ; 199
+(ID (CON ACTOR) (∧ ACTOR))               ; 200

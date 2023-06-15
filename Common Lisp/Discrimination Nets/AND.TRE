@@ -1,0 +1,29 @@
+;	This net is for CONJUNCTIONS (ANDs)
+((189 190)                              ; node 1, predicates:
+                                        ; 189 -> (MNLKC (CON) K) means main link code of the
+                                        ; first concept has code "K" for "K"ausal
+                                        ; and 190 -> (MNLKC (∧) K) means main link code of the
+                                        ; second concept also has code K
+                                        
+	((200)                          ; node 2 (false for node 1)
+                                        ; 200 -> (ID (CON ACTOR) (∧ ACTOR))
+        
+                ((T (AND1)) NIL)        ; node 4 (false for node 2)
+                                        ; AND1
+                                        ; used to have END-SENTENCE1 here ( which does a period between the sentences )
+                                        ; but removed it
+                ((T (AND3)) 4)          ; node 5 (true for node 1)
+                                        ; AND3 does conjunction for same ACTOR e.g. "Bob went and saw"
+        )
+                                        ; 
+	((141 142 158 159)              ; node 3 (true for node 1),
+                                        ; 141 -> (ID (CON <≡) (∧ CON)) - 
+                                        ; 142 -> (ID (CON <≡ ACTOR) (∧ <≡ ACTOR)) - same actor can't breathe and dies
+                                        ; 158 -> (POT_HEAD (∧ <≡) DIE1) - potential head for this part of the structure is DIE1
+                                        ; 159 -> (POT_HEAD (CON) CHOKE1) - potential head for this part of the structure is CHOKE1
+
+
+		((G . 2))               ; node 6, (false for node 3) just sends us back to node 2
+		((T (STRANGLE1)) 2)     ; node 7, (true for node 3) STRANGLE1, also sends us back to node 2
+	)
+)	;END-OF-TREE
