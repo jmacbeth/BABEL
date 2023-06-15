@@ -1441,7 +1441,32 @@
 ;  runs through the `modifiers' of a conceptualization
 ;   making appropriate changes to the syntax net
 ;
+
 (DEFUN PROCESS_MODS
+ (NODE LEXHEAD C_L)
+  (PROG (MODLIST CACL NEWBASETIME)
+    ;; call modhandler on all modifiers
+        (COND
+         ((SETQ MODLIST (CDR C_L))
+          (SETQ CACL (CAR C_L))
+          (PROG (&V)
+           LOOP (SETQ &V (MODHANDLER NODE CACL (CAR MODLIST) (CADR MODLIST)))
+            (COND ((NULL (SETQ MODLIST (CDDR MODLIST))) (RETURN &V)) (T (GO LOOP))))))
+    ;; Deal with tense and put in FORM, MOOD using
+    ;; CHOOSE_FORM, CHOOSE_MOOD, always active voice
+    (COND
+         ((AND (GETPROP LEXHEAD 'INF) (NOT (GETPROP LEXHEAD 'CONJ)))
+           (SETQ NEWBASETIME (TENSER NODE C_L))
+           (IF (CAR NEWBASETIME) (SETQ !BASETIME NEWBASETIME))
+           (PUTPROP NODE (CHOOSE_FORM NODE C_L) (QUOTE FORM))
+           (PUTPROP NODE (QUOTE (ACT)) (QUOTE VOICE))
+           (COND ((NOT (GETPROP NODE (QUOTE MOOD)))
+                   (PUTPROP NODE (CHOOSE_MOOD C_L) (QUOTE MOOD))))))))
+
+;; JCM June 2023: here is the version of PROCESS_MODS with an attempt to replace the PROG and LOOP
+;; there's some problem with it, but eventually it should replace the one above
+
+(DEFUN PROCESS_MODS_NEW
  (NODE LEXHEAD C_L)
   (PROG (MODLIST CACL NEWBASETIME)
     ;; call modhandler on all modifiers
