@@ -157,7 +157,7 @@
 (MAKE1 MAKE S ((ACTSBJ) (PRSNT (<≡)) ))
 (MAKE2 MAKE S ((GSBJ (CON)) (PRSNT (<≡))))
 (MAKE3 MAKE S ((ACTSBJ (CON)) (PRSNT (<≡))))
-(MOVE1 MOVE S ((ACTSBJ) (OBJ) (LOC))) 
+(MOVE1 MOVE S ((ACTSBJ) (OBJ) (LOC))) ; 6-29-2023, ABK and JCM think this will generate things like "Bill moved table book" which won't be right
 (OBJECT1 OBJECT S ((ACTSBJ (<≡> VAL PART)) (GOBJ (CON CON))(PART1 (QTHD TO)))) 
 (OWN1 OWN S ((ACTSBJ (<≡> VAL)) (OBJ (ACTOR)))) 
 (PAY-FOR PAY S ( (ACTSBJ (CON ACTOR)) (OBJ (CON OBJECT)) (OBJ2 (<≡≡> ACTOR))
@@ -216,7 +216,7 @@
 (TAKEBREATH1 TAKE S ((ACTSBJ) (OBJ ALL (INSHD BREATH1)) ) )
 (TAKE1 TAKE S ((ACTSBJ) (OBJ) (IOBJ (FROM)(MAKPREP FROM))))  ;*ATRANS*
 (TAKE2 TAKE S ((ACTSBJ) (OBJ))) 	;*INGEST*
-(TAKE3 TAKE S ((ACTSBJ) (OBJ) (OBJ2))) 	;*PTRANS*
+(TAKE3 TAKE S ((ACTSBJ) (OBJ) (OBJ2))) 	;*PTRANS* ; 6-29-2023, ABK and JCM think this will generate things like "Bill took table book" which won't be right
 (TELL1 TELL S ((ACTSBJ) (S2) (OBJ2 (TO PART)))) 
 (THINK1 THINK S ((ACTSBJ (<≡> VAL PART)) (S2 (CON CON))))
 (THREATEN1 THREATEN S ((ACTSBJ) (INF (MOBJECT)))) 
