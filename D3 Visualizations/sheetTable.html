@@ -1,0 +1,53 @@
+<!--Sources: 
+	https://travishorn.com/visualizing-google-sheets-data-in-d3-f3230732c741
+	https://gist.github.com/jfreels/6814721#file-data-csv-->
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Google Sheets Table</title>
+  </head>
+  <body>
+    <!--<svg id="chart" viewBox="0 0 500 300"></svg>-->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script>
+
+		const drawChart = async () => {
+			const data = await d3.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vTFK1O3FyhduX-z2CVcn_oCt_I4HYsaJEe2N9JTe76Fjf1vPU6oI7IaxxBcIEibrmGBJeVr-GcMXvA7/pub?gid=1329309268&single=true&output=csv");
+			const columns = ['NodeID','PredicateID','PredicateValue','WordSenseID','BackPointer'];
+
+			const table = d3.select('body').append('table')
+				const thead = table.append('thead')
+				const tbody = table.append('tbody')
+
+				thead.append('tr')
+				.selectAll('th')
+					.data(columns)
+					.enter()
+				.append('th')
+					.text(function (d) { return d })
+
+				const rows = tbody.selectAll('tr')
+					.data(data)
+					.enter()
+				.append('tr')
+
+				const cells = rows.selectAll('td')
+					.data(function(row) {
+						return columns.map(function (column) {
+							return { column: column, value: row[column] }
+					})
+				})
+				.enter()
+				.append('td')
+				.text(function (d) { return d.value })
+
+			return table;
+		};
+
+		drawChart();
+
+    </script>
+  </body>
+</html>
