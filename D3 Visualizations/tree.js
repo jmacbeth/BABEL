@@ -182,6 +182,7 @@ var Data = d3.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vTFK1O3FyhduX
     root = d3.hierarchy(treeData, function(d) { return d.children; });
     root.x0 = height / 2;
     root.y0 = 0;
+    console.log(typeof root)
 
     console.log(root)
     // Collapse after the second level
